@@ -2,14 +2,26 @@
 #define GRAPH_HPP
 
 #include <iostream>
+#include <map>
+#include <vector>
 
 using namespace std;
+
+class Node {
+    public:
+        Node(string val);
+        vector<Node *> neighbors;
+        string key; 
+        bool visited;
+};
+
 
 class Graph {
  protected:
   //MAYBE ADD CLASS DATA STRUCTURE(S) HERE
 
  public:
+  map<string, Node*>  nodes;
   Graph(void);
 
   ~Graph(void);
@@ -25,5 +37,8 @@ class Graph {
   void socialgathering(vector<string>& invitees, const int& k);
 
 };
+
+
+
 
 #endif  // GRAPH_HPP

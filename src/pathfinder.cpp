@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 
   //TODO   
  /* You can call the pathfinder function from here */
-
-
+ Graph g;
+ g.loadFromFile("sample.txt"); 
     
 }  

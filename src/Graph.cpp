@@ -7,17 +7,23 @@
 #include <sstream>
 #include <string>
 #include <utility>
-
+#include <map>
 using namespace std;
 
-Graph::Graph(void)
-    : nodes(0) {}
+Node::Node(String val){
+    this->key = insert;
+    this->visited = false;
+}
+
+Graph::Graph(void)  {
+    //Initialize the graph
+
+
+}
 
 Graph::~Graph(void) {
-  for (auto itr : nodes) {
-    delete itr.second;
-  }
 }
+
 
 /* Add a node to the graph representing person with id idNumber and add a connection between two nodes in the graph. */
 //TODO
@@ -45,8 +51,21 @@ bool Graph::loadFromFile(const char* in_filename) {
       continue;
     }
 
-    //TODO - YOU HAVE THE PAIR OF IDS OF 2 FRIENDS IN 'RECORD'. WHAT DO NEED TO DO NOW? 
-      
+    
+    //If node does not exist in the graph then create a new reference to it
+    if(nodes.find(record[0]) == nodes.end()){
+        cout << "creating a new node for" << record[0] << endl;
+        Node *n = new Node(record[0]);
+   //     nodes.insert(record[0] , n);
+    }
+
+    if(nodes.find(record[1]) == nodes.end()){
+        cout << "Creating a new node for" << record[1] << endl;
+        Node *n2 = new Node(record[1]);
+     //   nodes.insert(record[1], n2);
+    }
+
+
   }
 
   if (!infile.eof()) {
@@ -61,12 +80,11 @@ bool Graph::loadFromFile(const char* in_filename) {
 /* Implement pathfinder*/
 //TODO 
 bool Graph::pathfinder(Node* from, Node* to) {
-  
+    return true;  
 }
 
 /* Implement social gathering*/
 //TODO
 void Graph::socialgathering(vector<string>& invitees, const int& k) {
-
 }
 

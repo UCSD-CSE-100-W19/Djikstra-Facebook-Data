@@ -1,0 +1,120 @@
+src/Graph.cpp: In destructor 'Graph::~Graph()':
+src/Graph.cpp:20:19: error: no matching function for call to 'begin(std::map<int, Node>*&)'
+   for (auto itr : nodes) {
+                   ^
+src/Graph.cpp:20:19: note: candidates are:
+In file included from /usr/include/c++/4.8.2/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.8.2/string:52,
+                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8.2/ios:42,
+                 from /usr/include/c++/4.8.2/ostream:38,
+                 from /usr/include/c++/4.8.2/iostream:39,
+                 from src/Graph.hpp:4,
+                 from src/Graph.cpp:1:
+/usr/include/c++/4.8.2/initializer_list:89:5: note: template<class _Tp> constexpr const _Tp* std::begin(std::initializer_list<_Tp>)
+     begin(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.8.2/initializer_list:89:5: note:   template argument deduction/substitution failed:
+src/Graph.cpp:20:19: note:   mismatched types 'std::initializer_list<_Tp>' and 'std::map<int, Node>*'
+   for (auto itr : nodes) {
+                   ^
+In file included from /usr/include/c++/4.8.2/string:51:0,
+                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8.2/ios:42,
+                 from /usr/include/c++/4.8.2/ostream:38,
+                 from /usr/include/c++/4.8.2/iostream:39,
+                 from src/Graph.hpp:4,
+                 from src/Graph.cpp:1:
+/usr/include/c++/4.8.2/bits/range_access.h:87:5: note: template<class _Tp, long unsigned int _Nm> _Tp* std::begin(_Tp (&)[_Nm])
+     begin(_Tp (&__arr)[_Nm])
+     ^
+/usr/include/c++/4.8.2/bits/range_access.h:87:5: note:   template argument deduction/substitution failed:
+src/Graph.cpp:20:19: note:   mismatched types '_Tp [_Nm]' and 'std::map<int, Node>*'
+   for (auto itr : nodes) {
+                   ^
+In file included from /usr/include/c++/4.8.2/string:51:0,
+                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8.2/ios:42,
+                 from /usr/include/c++/4.8.2/ostream:38,
+                 from /usr/include/c++/4.8.2/iostream:39,
+                 from src/Graph.hpp:4,
+                 from src/Graph.cpp:1:
+/usr/include/c++/4.8.2/bits/range_access.h:58:5: note: template<class _Container> decltype (__cont.begin()) std::begin(const _Container&)
+     begin(const _Container& __cont) -> decltype(__cont.begin())
+     ^
+/usr/include/c++/4.8.2/bits/range_access.h:58:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.begin()) std::begin(const _Container&) [with _Container = std::map<int, Node>*]':
+src/Graph.cpp:20:19:   required from here
+/usr/include/c++/4.8.2/bits/range_access.h:58:5: error: request for member 'begin' in '__cont', which is of pointer type 'std::map<int, Node>* const' (maybe you meant to use '->' ?)
+/usr/include/c++/4.8.2/bits/range_access.h:48:5: note: template<class _Container> decltype (__cont.begin()) std::begin(_Container&)
+     begin(_Container& __cont) -> decltype(__cont.begin())
+     ^
+/usr/include/c++/4.8.2/bits/range_access.h:48:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.begin()) std::begin(_Container&) [with _Container = std::map<int, Node>*]':
+src/Graph.cpp:20:19:   required from here
+/usr/include/c++/4.8.2/bits/range_access.h:48:5: error: request for member 'begin' in '__cont', which is of pointer type 'std::map<int, Node>*' (maybe you meant to use '->' ?)
+src/Graph.cpp:20:19: error: no matching function for call to 'end(std::map<int, Node>*&)'
+   for (auto itr : nodes) {
+                   ^
+src/Graph.cpp:20:19: note: candidates are:
+In file included from /usr/include/c++/4.8.2/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.8.2/string:52,
+                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8.2/ios:42,
+                 from /usr/include/c++/4.8.2/ostream:38,
+                 from /usr/include/c++/4.8.2/iostream:39,
+                 from src/Graph.hpp:4,
+                 from src/Graph.cpp:1:
+/usr/include/c++/4.8.2/initializer_list:99:5: note: template<class _Tp> constexpr const _Tp* std::end(std::initializer_list<_Tp>)
+     end(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.8.2/initializer_list:99:5: note:   template argument deduction/substitution failed:
+src/Graph.cpp:20:19: note:   mismatched types 'std::initializer_list<_Tp>' and 'std::map<int, Node>*'
+   for (auto itr : nodes) {
+                   ^
+In file included from /usr/include/c++/4.8.2/string:51:0,
+                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8.2/ios:42,
+                 from /usr/include/c++/4.8.2/ostream:38,
+                 from /usr/include/c++/4.8.2/iostream:39,
+                 from src/Graph.hpp:4,
+                 from src/Graph.cpp:1:
+/usr/include/c++/4.8.2/bits/range_access.h:97:5: note: template<class _Tp, long unsigned int _Nm> _Tp* std::end(_Tp (&)[_Nm])
+     end(_Tp (&__arr)[_Nm])
+     ^
+/usr/include/c++/4.8.2/bits/range_access.h:97:5: note:   template argument deduction/substitution failed:
+src/Graph.cpp:20:19: note:   mismatched types '_Tp [_Nm]' and 'std::map<int, Node>*'
+   for (auto itr : nodes) {
+                   ^
+In file included from /usr/include/c++/4.8.2/string:51:0,
+                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8.2/ios:42,
+                 from /usr/include/c++/4.8.2/ostream:38,
+                 from /usr/include/c++/4.8.2/iostream:39,
+                 from src/Graph.hpp:4,
+                 from src/Graph.cpp:1:
+/usr/include/c++/4.8.2/bits/range_access.h:78:5: note: template<class _Container> decltype (__cont.end()) std::end(const _Container&)
+     end(const _Container& __cont) -> decltype(__cont.end())
+     ^
+/usr/include/c++/4.8.2/bits/range_access.h:78:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.end()) std::end(const _Container&) [with _Container = std::map<int, Node>*]':
+src/Graph.cpp:20:19:   required from here
+/usr/include/c++/4.8.2/bits/range_access.h:78:5: error: request for member 'end' in '__cont', which is of pointer type 'std::map<int, Node>* const' (maybe you meant to use '->' ?)
+/usr/include/c++/4.8.2/bits/range_access.h:68:5: note: template<class _Container> decltype (__cont.end()) std::end(_Container&)
+     end(_Container& __cont) -> decltype(__cont.end())
+     ^
+/usr/include/c++/4.8.2/bits/range_access.h:68:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.end()) std::end(_Container&) [with _Container = std::map<int, Node>*]':
+src/Graph.cpp:20:19:   required from here
+/usr/include/c++/4.8.2/bits/range_access.h:68:5: error: request for member 'end' in '__cont', which is of pointer type 'std::map<int, Node>*' (maybe you meant to use '->' ?)
+src/Graph.cpp: In member function 'void Graph::socialgathering(std::vector<std::basic_string<char> >&, const int&)':
+src/Graph.cpp:73:12: error: return-statement with a value, in function returning 'void' [-fpermissive]
+     return true;
+            ^
+make: *** [build/obj/Graph.o] Error 1
