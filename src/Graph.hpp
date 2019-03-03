@@ -13,6 +13,7 @@ class Node {
         vector<Node *> neighbors;
         string key; 
         bool visited;
+        Node * parent; //The node that added it onto the list
 };
 
 
@@ -21,7 +22,7 @@ class Graph {
   //MAYBE ADD CLASS DATA STRUCTURE(S) HERE
 
  public:
-  map<string, Node*>  nodes;
+  map<string, Node *>  nodes;
   Graph(void);
 
   ~Graph(void);

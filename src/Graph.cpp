@@ -8,11 +8,13 @@
 #include <string>
 #include <utility>
 #include <map>
+#include <queue>
 using namespace std;
 
-Node::Node(String val){
-    this->key = insert;
+Node::Node(string val){
+    this->key = val;
     this->visited = false;
+    this->parent = NULL;
 }
 
 Graph::Graph(void)  {
@@ -54,17 +56,19 @@ bool Graph::loadFromFile(const char* in_filename) {
     
     //If node does not exist in the graph then create a new reference to it
     if(nodes.find(record[0]) == nodes.end()){
-        cout << "creating a new node for" << record[0] << endl;
         Node *n = new Node(record[0]);
-   //     nodes.insert(record[0] , n);
+        nodes.insert(pair<string, Node *>(record[0] , n));
     }
 
     if(nodes.find(record[1]) == nodes.end()){
-        cout << "Creating a new node for" << record[1] << endl;
         Node *n2 = new Node(record[1]);
-     //   nodes.insert(record[1], n2);
+        this->nodes.insert(pair<string, Node *>(record[1] , n2));
     }
-
+    
+    //Inserting neighbor into the key node
+    Node * curr = nodes[record[0]];
+    Node * dest = nodes[record[1]];
+    curr->neighbors.push_back(dest);
 
   }
 
@@ -78,8 +82,38 @@ bool Graph::loadFromFile(const char* in_filename) {
 }
 
 /* Implement pathfinder*/
-//TODO 
 bool Graph::pathfinder(Node* from, Node* to) {
+    queue<Node *> tovisit;
+    tovisit.push(from);
+    
+    while(!tovisit.empty()){
+   
+        Node * curr = tovisit.front();
+        tovisit.pop();
+        curr->visited = true;     
+        
+        cout << "popping " << curr->key << "From the queue" << endl;    
+
+        if(curr == to){
+            cout << "We found the node" << endl;
+            while(curr->parent){
+                cout << curr-> key << endl;
+                curr = curr->parent;
+            }
+            return true;
+        }    
+        
+            //Enqueue the unvisited neighbor nodes
+            for(int i =0; i < curr->neighbors.size(); i++){
+                if(curr->neighbors[i]->visited == false){
+                    tovisit.push(curr->neighbors[i]);
+                    curr->neighbors[i]->parent = curr;
+                 }        
+            }   
+
+   
+     }   
+
     return true;  
 }
 

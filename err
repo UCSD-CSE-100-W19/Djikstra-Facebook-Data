@@ -1,120 +1,48 @@
-src/Graph.cpp: In destructor 'Graph::~Graph()':
-src/Graph.cpp:20:19: error: no matching function for call to 'begin(std::map<int, Node>*&)'
-   for (auto itr : nodes) {
-                   ^
-src/Graph.cpp:20:19: note: candidates are:
-In file included from /usr/include/c++/4.8.2/bits/basic_string.h:42:0,
-                 from /usr/include/c++/4.8.2/string:52,
-                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
-                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
-                 from /usr/include/c++/4.8.2/ios:42,
-                 from /usr/include/c++/4.8.2/ostream:38,
-                 from /usr/include/c++/4.8.2/iostream:39,
-                 from src/Graph.hpp:4,
+src/Graph.cpp: In member function 'bool Graph::loadFromFile(const char*)':
+src/Graph.cpp:67:41: error: no matching function for call to 'std::map<std::basic_string<char>, Node*>::insert(__gnu_cxx::__alloc_traits<std::allocator<std::basic_string<char> > >::value_type&, Node*&)'
+         this->nodes.insert(record[1], n2);
+                                         ^
+src/Graph.cpp:67:41: note: candidates are:
+In file included from /usr/include/c++/4.8.2/map:61:0,
+                 from src/Graph.hpp:5,
                  from src/Graph.cpp:1:
-/usr/include/c++/4.8.2/initializer_list:89:5: note: template<class _Tp> constexpr const _Tp* std::begin(std::initializer_list<_Tp>)
-     begin(initializer_list<_Tp> __ils) noexcept
-     ^
-/usr/include/c++/4.8.2/initializer_list:89:5: note:   template argument deduction/substitution failed:
-src/Graph.cpp:20:19: note:   mismatched types 'std::initializer_list<_Tp>' and 'std::map<int, Node>*'
-   for (auto itr : nodes) {
-                   ^
-In file included from /usr/include/c++/4.8.2/string:51:0,
-                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
-                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
-                 from /usr/include/c++/4.8.2/ios:42,
-                 from /usr/include/c++/4.8.2/ostream:38,
-                 from /usr/include/c++/4.8.2/iostream:39,
-                 from src/Graph.hpp:4,
+/usr/include/c++/4.8.2/bits/stl_map.h:594:7: note: std::pair<typename std::_Rb_tree<_Key, std::pair<const _Key, _Tp>, std::_Select1st<std::pair<const _Key, _Tp> >, _Compare, typename _Alloc::rebind<std::pair<const _Key, _Tp> >::other>::iterator, bool> std::map<_Key, _Tp, _Compare, _Alloc>::insert(const value_type&) [with _Key = std::basic_string<char>; _Tp = Node*; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, Node*> >; typename std::_Rb_tree<_Key, std::pair<const _Key, _Tp>, std::_Select1st<std::pair<const _Key, _Tp> >, _Compare, typename _Alloc::rebind<std::pair<const _Key, _Tp> >::other>::iterator = std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, Node*> >; std::map<_Key, _Tp, _Compare, _Alloc>::value_type = std::pair<const std::basic_string<char>, Node*>]
+       insert(const value_type& __x)
+       ^
+/usr/include/c++/4.8.2/bits/stl_map.h:594:7: note:   candidate expects 1 argument, 2 provided
+/usr/include/c++/4.8.2/bits/stl_map.h:602:9: note: template<class _Pair, class> std::pair<typename std::_Rb_tree<_Key, std::pair<const _Key, _Tp>, std::_Select1st<std::pair<const _Key, _Tp> >, _Compare, typename _Alloc::rebind<std::pair<const _Key, _Tp> >::other>::iterator, bool> std::map<_Key, _Tp, _Compare, _Alloc>::insert(_Pair&&) [with _Pair = _Pair; <template-parameter-2-2> = <template-parameter-1-2>; _Key = std::basic_string<char>; _Tp = Node*; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, Node*> >]
+         insert(_Pair&& __x)
+         ^
+/usr/include/c++/4.8.2/bits/stl_map.h:602:9: note:   template argument deduction/substitution failed:
+src/Graph.cpp:67:41: note:   candidate expects 1 argument, 2 provided
+         this->nodes.insert(record[1], n2);
+                                         ^
+In file included from /usr/include/c++/4.8.2/map:61:0,
+                 from src/Graph.hpp:5,
                  from src/Graph.cpp:1:
-/usr/include/c++/4.8.2/bits/range_access.h:87:5: note: template<class _Tp, long unsigned int _Nm> _Tp* std::begin(_Tp (&)[_Nm])
-     begin(_Tp (&__arr)[_Nm])
-     ^
-/usr/include/c++/4.8.2/bits/range_access.h:87:5: note:   template argument deduction/substitution failed:
-src/Graph.cpp:20:19: note:   mismatched types '_Tp [_Nm]' and 'std::map<int, Node>*'
-   for (auto itr : nodes) {
-                   ^
-In file included from /usr/include/c++/4.8.2/string:51:0,
-                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
-                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
-                 from /usr/include/c++/4.8.2/ios:42,
-                 from /usr/include/c++/4.8.2/ostream:38,
-                 from /usr/include/c++/4.8.2/iostream:39,
-                 from src/Graph.hpp:4,
+/usr/include/c++/4.8.2/bits/stl_map.h:615:7: note: void std::map<_Key, _Tp, _Compare, _Alloc>::insert(std::initializer_list<std::pair<const _Key, _Tp> >) [with _Key = std::basic_string<char>; _Tp = Node*; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, Node*> >]
+       insert(std::initializer_list<value_type> __list)
+       ^
+/usr/include/c++/4.8.2/bits/stl_map.h:615:7: note:   candidate expects 1 argument, 2 provided
+/usr/include/c++/4.8.2/bits/stl_map.h:644:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::iterator std::map<_Key, _Tp, _Compare, _Alloc>::insert(std::map<_Key, _Tp, _Compare, _Alloc>::const_iterator, const value_type&) [with _Key = std::basic_string<char>; _Tp = Node*; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, Node*> >; std::map<_Key, _Tp, _Compare, _Alloc>::iterator = std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, Node*> >; std::map<_Key, _Tp, _Compare, _Alloc>::const_iterator = std::_Rb_tree_const_iterator<std::pair<const std::basic_string<char>, Node*> >; std::map<_Key, _Tp, _Compare, _Alloc>::value_type = std::pair<const std::basic_string<char>, Node*>]
+       insert(const_iterator __position, const value_type& __x)
+       ^
+/usr/include/c++/4.8.2/bits/stl_map.h:644:7: note:   no known conversion for argument 1 from '__gnu_cxx::__alloc_traits<std::allocator<std::basic_string<char> > >::value_type {aka std::basic_string<char>}' to 'std::map<std::basic_string<char>, Node*>::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const std::basic_string<char>, Node*> >}'
+/usr/include/c++/4.8.2/bits/stl_map.h:655:9: note: template<class _Pair, class> std::map<_Key, _Tp, _Compare, _Alloc>::iterator std::map<_Key, _Tp, _Compare, _Alloc>::insert(std::map<_Key, _Tp, _Compare, _Alloc>::const_iterator, _Pair&&) [with _Pair = _Pair; <template-parameter-2-2> = <template-parameter-1-2>; _Key = std::basic_string<char>; _Tp = Node*; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, Node*> >]
+         insert(const_iterator __position, _Pair&& __x)
+         ^
+/usr/include/c++/4.8.2/bits/stl_map.h:655:9: note:   template argument deduction/substitution failed:
+src/Graph.cpp:67:41: note:   cannot convert 'record.std::vector<_Tp, _Alloc>::operator[]<std::basic_string<char>, std::allocator<std::basic_string<char> > >(1ul)' (type '__gnu_cxx::__alloc_traits<std::allocator<std::basic_string<char> > >::value_type {aka std::basic_string<char>}') to type 'std::map<std::basic_string<char>, Node*>::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const std::basic_string<char>, Node*> >}'
+         this->nodes.insert(record[1], n2);
+                                         ^
+In file included from /usr/include/c++/4.8.2/map:61:0,
+                 from src/Graph.hpp:5,
                  from src/Graph.cpp:1:
-/usr/include/c++/4.8.2/bits/range_access.h:58:5: note: template<class _Container> decltype (__cont.begin()) std::begin(const _Container&)
-     begin(const _Container& __cont) -> decltype(__cont.begin())
-     ^
-/usr/include/c++/4.8.2/bits/range_access.h:58:5: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.begin()) std::begin(const _Container&) [with _Container = std::map<int, Node>*]':
-src/Graph.cpp:20:19:   required from here
-/usr/include/c++/4.8.2/bits/range_access.h:58:5: error: request for member 'begin' in '__cont', which is of pointer type 'std::map<int, Node>* const' (maybe you meant to use '->' ?)
-/usr/include/c++/4.8.2/bits/range_access.h:48:5: note: template<class _Container> decltype (__cont.begin()) std::begin(_Container&)
-     begin(_Container& __cont) -> decltype(__cont.begin())
-     ^
-/usr/include/c++/4.8.2/bits/range_access.h:48:5: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.begin()) std::begin(_Container&) [with _Container = std::map<int, Node>*]':
-src/Graph.cpp:20:19:   required from here
-/usr/include/c++/4.8.2/bits/range_access.h:48:5: error: request for member 'begin' in '__cont', which is of pointer type 'std::map<int, Node>*' (maybe you meant to use '->' ?)
-src/Graph.cpp:20:19: error: no matching function for call to 'end(std::map<int, Node>*&)'
-   for (auto itr : nodes) {
-                   ^
-src/Graph.cpp:20:19: note: candidates are:
-In file included from /usr/include/c++/4.8.2/bits/basic_string.h:42:0,
-                 from /usr/include/c++/4.8.2/string:52,
-                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
-                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
-                 from /usr/include/c++/4.8.2/ios:42,
-                 from /usr/include/c++/4.8.2/ostream:38,
-                 from /usr/include/c++/4.8.2/iostream:39,
-                 from src/Graph.hpp:4,
-                 from src/Graph.cpp:1:
-/usr/include/c++/4.8.2/initializer_list:99:5: note: template<class _Tp> constexpr const _Tp* std::end(std::initializer_list<_Tp>)
-     end(initializer_list<_Tp> __ils) noexcept
-     ^
-/usr/include/c++/4.8.2/initializer_list:99:5: note:   template argument deduction/substitution failed:
-src/Graph.cpp:20:19: note:   mismatched types 'std::initializer_list<_Tp>' and 'std::map<int, Node>*'
-   for (auto itr : nodes) {
-                   ^
-In file included from /usr/include/c++/4.8.2/string:51:0,
-                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
-                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
-                 from /usr/include/c++/4.8.2/ios:42,
-                 from /usr/include/c++/4.8.2/ostream:38,
-                 from /usr/include/c++/4.8.2/iostream:39,
-                 from src/Graph.hpp:4,
-                 from src/Graph.cpp:1:
-/usr/include/c++/4.8.2/bits/range_access.h:97:5: note: template<class _Tp, long unsigned int _Nm> _Tp* std::end(_Tp (&)[_Nm])
-     end(_Tp (&__arr)[_Nm])
-     ^
-/usr/include/c++/4.8.2/bits/range_access.h:97:5: note:   template argument deduction/substitution failed:
-src/Graph.cpp:20:19: note:   mismatched types '_Tp [_Nm]' and 'std::map<int, Node>*'
-   for (auto itr : nodes) {
-                   ^
-In file included from /usr/include/c++/4.8.2/string:51:0,
-                 from /usr/include/c++/4.8.2/bits/locale_classes.h:40,
-                 from /usr/include/c++/4.8.2/bits/ios_base.h:41,
-                 from /usr/include/c++/4.8.2/ios:42,
-                 from /usr/include/c++/4.8.2/ostream:38,
-                 from /usr/include/c++/4.8.2/iostream:39,
-                 from src/Graph.hpp:4,
-                 from src/Graph.cpp:1:
-/usr/include/c++/4.8.2/bits/range_access.h:78:5: note: template<class _Container> decltype (__cont.end()) std::end(const _Container&)
-     end(const _Container& __cont) -> decltype(__cont.end())
-     ^
-/usr/include/c++/4.8.2/bits/range_access.h:78:5: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.end()) std::end(const _Container&) [with _Container = std::map<int, Node>*]':
-src/Graph.cpp:20:19:   required from here
-/usr/include/c++/4.8.2/bits/range_access.h:78:5: error: request for member 'end' in '__cont', which is of pointer type 'std::map<int, Node>* const' (maybe you meant to use '->' ?)
-/usr/include/c++/4.8.2/bits/range_access.h:68:5: note: template<class _Container> decltype (__cont.end()) std::end(_Container&)
-     end(_Container& __cont) -> decltype(__cont.end())
-     ^
-/usr/include/c++/4.8.2/bits/range_access.h:68:5: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8.2/bits/range_access.h: In substitution of 'template<class _Container> decltype (__cont.end()) std::end(_Container&) [with _Container = std::map<int, Node>*]':
-src/Graph.cpp:20:19:   required from here
-/usr/include/c++/4.8.2/bits/range_access.h:68:5: error: request for member 'end' in '__cont', which is of pointer type 'std::map<int, Node>*' (maybe you meant to use '->' ?)
-src/Graph.cpp: In member function 'void Graph::socialgathering(std::vector<std::basic_string<char> >&, const int&)':
-src/Graph.cpp:73:12: error: return-statement with a value, in function returning 'void' [-fpermissive]
-     return true;
-            ^
+/usr/include/c++/4.8.2/bits/stl_map.h:670:9: note: template<class _InputIterator> void std::map<_Key, _Tp, _Compare, _Alloc>::insert(_InputIterator, _InputIterator) [with _InputIterator = _InputIterator; _Key = std::basic_string<char>; _Tp = Node*; _Compare = std::less<std::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::basic_string<char>, Node*> >]
+         insert(_InputIterator __first, _InputIterator __last)
+         ^
+/usr/include/c++/4.8.2/bits/stl_map.h:670:9: note:   template argument deduction/substitution failed:
+src/Graph.cpp:67:41: note:   deduced conflicting types for parameter '_InputIterator' ('std::basic_string<char>' and 'Node*')
+         this->nodes.insert(record[1], n2);
+                                         ^
 make: *** [build/obj/Graph.o] Error 1

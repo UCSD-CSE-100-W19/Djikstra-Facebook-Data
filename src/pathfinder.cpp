@@ -32,5 +32,5 @@ int main(int argc, char* argv[]) {
  /* You can call the pathfinder function from here */
  Graph g;
  g.loadFromFile("sample.txt"); 
-    
+ g.pathfinder(g.nodes.at("0") , g.nodes.at("9"));
 }  
