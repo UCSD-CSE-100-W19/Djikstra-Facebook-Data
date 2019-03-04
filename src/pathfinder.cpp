@@ -31,6 +31,13 @@ int main(int argc, char* argv[]) {
   //TODO   
  /* You can call the pathfinder function from here */
  Graph g;
- g.loadFromFile("sample.txt"); 
- g.pathfinder(g.nodes.at("0") , g.nodes.at("9"));
+ g.loadFromFile(graph_filename); 
+// g.pathfinder(g.nodes.at("3") , g.nodes.at("12"));
+ //g.printToFile("mysolout" , "file1.txt");
+// g.reset();
+// g.pathfinder(g.nodes.at("3") , g.nodes.at("12"));
+// g.printShortestPath();        
+// g.reset();
+ //g.pathfinder(g.nodes.at("0"), g.nodes.at("0"));
+  g.printToFile(output_filename , pairs_filename);
 }  
