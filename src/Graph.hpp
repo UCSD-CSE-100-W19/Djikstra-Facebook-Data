@@ -8,48 +8,43 @@
 #include <set>
 using namespace std;
 
+//Constructor for the node class
 class Node {
     public:
         Node(string val);
         vector<Node *> neighbors;
         string key; 
         bool visited;
-        Node * parent; //The node that added it onto the list
+        Node * parent;
         int dist;
 };
 
-
+//Constructor for the graph class
 class Graph {
- protected:
-  //MAYBE ADD CLASS DATA STRUCTURE(S) HERE
+    private:
+        void reset();
 
- public:
-  set<Node *> cache;
-  map<string, Node *>  nodes;
-  Graph(void);
+    public:
+        set<Node *> cache;
+        map<string, Node *>  nodes;
+        Graph(void);
   
 
-  stack<Node *> shortestPath;     
-  ~Graph(void);
+        stack<Node *> shortestPath;     
+        ~Graph(void);
 
-  //MAYBE ADD SOME MORE METHODS HERE SO AS TO ANSWER QUESTIONS IN YOUR PA
-	
-  /* YOU CAN MODIFY THIS IF YOU LIKE , in_filename : THE INPUT FILENAME */
+        bool loadFromFile(const char* in_filename);
 
-  bool loadFromFile(const char* in_filename);
-
-  bool pathfinder(Node* from, Node* to);
+        bool pathfinder(Node* from, Node* to);
     
-  void socialgathering(vector<string>& invitees, const int& k);
+        void socialgathering(vector<string>& invitees, const int& k);
 
-  void printToFile(string outfile, string infile);
+        void printToFile(string outfile, string infile);
     
-  void reset();
 
-  void printShortestPath();
+        void printShortestPath();
 
-  bool isDigit(string s);
-
+        bool isDigit(string s);
 };
 
 

@@ -54,16 +54,6 @@ bool Graph::loadFromFile(const char* in_filename) {
       continue;
     }
   
-    //bool dig1 = isDigit(record[0]);
-    //bool dig2 = isDigit(record[1]);
-
-    //cout << dig1 << " " << dig2 << endl;
- 
-    //Check if they are not numbers
-    //if(dig1 == false || dig2 ==false){
-    //    continue;
-    //}
- 
     //If node does not exist in the graph then create a new reference to it
     if(nodes.find(record[0]) == nodes.end()){
         Node *n = new Node(record[0]);
@@ -226,7 +216,6 @@ bool Graph::isDigit(string s){
     }
     return true;
 }
-
 
 /* Implement social gathering*/
 //TODO
