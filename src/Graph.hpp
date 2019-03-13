@@ -27,9 +27,6 @@ class Graph {
         //Set that keep track of nodes that we will reset later
         set<Node *> cache;
         
-        //Map that contains all the nodes in the graph
-        map<string, Node *>  nodes;
-        
         //The shortest path that we will be printing frtom
         stack<Node *> shortestPath;     
 
@@ -46,10 +43,16 @@ class Graph {
 
         bool loadFromFile(const char* in_filename);
 
-        void socialgathering(vector<string>& invitees, const int& k);
+        void socialgathering(map<string, int> * degrees, Node * startVertex,  const int& k);
 
         void printToFile(string outfile, string infile);
     
+        bool socialHelper(Node * curr, int k);
+  
+        bool genDegree(const char * in_filename, map<string, int> * d ); 
+
+        //Map that contains all the nodes in the graph
+        map<string, Node *>  nodes;
 };
 
 #endif  // GRAPH_HPP

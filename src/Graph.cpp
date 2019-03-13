@@ -248,7 +248,98 @@ bool Graph::isDigit(string s){
   return true;
 }
 
+
+//DFS Helper Function
+static bool traversal( Node * node, map<string, int> * degree, int k){
+  node->visited = true;
+
+  //Iterate through all of nodes neighbors 
+  for( int i =0; i < node->neighbors.size(); i++){
+    //If the degree is less than k then we decrement by one
+    if((*degree)[node->key] < k ){
+      (*degree)[node->neighbors[i]->key]--; 
+    }   
+    
+    //Do DFS
+    if(node->neighbors[i]->visited == false){
+      if(traversal(node->neighbors[i], degree, k)) (*degree)[node->key]--;
+    }
+  }
+  return ((*degree)[node->key] < k);
+}
+
 /* Implement social gathering*/
-void Graph::socialgathering(vector<string>& invitees, const int& k) {
+void Graph::socialgathering(map<string, int> *  degrees, Node * startVertex, const int& k) {
+  traversal(startVertex, degrees, k);
+}
+
+//Generates a map of the number of degrees to a string
+bool Graph::genDegree(const char * in_filename, map<string, int> * degree){
+
+  ifstream infile(in_filename);
+
+  while (infile) {
+    string s;
+    if (!getline(infile, s)) break;
+
+    istringstream ss(s);
+    vector<string> record;
+
+    while (ss) {
+      string s;
+      if (!getline(ss, s, ' ')) break;
+      record.push_back(s);
+    }
+
+    if (record.size() != 2) {
+      continue;
+    }
+  
+    //If node does not exist in the graph then create a new reference to it
+    if(nodes.find(record[0]) == nodes.end()){
+        Node *n = new Node(record[0]);
+        nodes.insert(pair<string, Node *>(record[0] , n));
+        degree->insert(pair<string, int>(record[0], 0));
+    }
+    //Do the same thing for the second paramter
+    if(nodes.find(record[1]) == nodes.end()){
+        Node *n2 = new Node(record[1]);
+        this->nodes.insert(pair<string, Node *>(record[1] , n2));
+        degree->insert(pair<string, int>(record[1], 0));
+    }
+    
+    //Insert the nodes into the hashmap
+    Node * curr = nodes[record[0]];
+    Node * dest = nodes[record[1]];
+    curr->neighbors.push_back(dest);
+    dest->neighbors.push_back(curr);
+
+    //Increment the count of hashmap
+    (*degree)[record[0]] = (*degree)[record[0]] + 1;
+    (*degree)[record[1]] = (*degree)[record[1]] + 1;
+
+  }
+  
+  if (!infile.eof()) {
+    cerr << "Failed to read " << in_filename << "!\n";
+    return false;
+  }
+
+  infile.close();
+  return true;
+}
+
+bool Graph::socialHelper(Node * curr, int k){
+
+  curr->visited = true;
+      
+  //Iterate through the graph
+  for(size_t i = 0; i < curr->neighbors.size(); i++){       
+
+
+
+  }
+
+
 }
 
