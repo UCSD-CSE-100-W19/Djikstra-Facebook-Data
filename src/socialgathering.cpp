@@ -68,6 +68,8 @@ int main(int argc, char* argv[]) {
     
   g.genDegree(graph_filename, &degree);
 
+  g.socialgathering(&degree, g.nodes["0"], k );
+  
   //Run k core algorithm to reduce the degree values
   for( auto const &x : g.nodes ){
     if( x.second->visited == false){
