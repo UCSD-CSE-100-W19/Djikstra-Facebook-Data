@@ -7,7 +7,6 @@
 #include <vector>
 #include "Graph.hpp"
 using namespace std;
-
 /*
  * void usage(char * program_name);
  * Description: Checks if the user netered the correct number of arguments;
@@ -23,6 +22,7 @@ void usage(char* program_name) {
 }
 
 /*
+ *
  * int main(int argc, char* argv[);
  * Description: Main driver function for the pathfinder program
  * Takes in a graph file and generates a undirected graph. Then
