@@ -10,3 +10,10 @@ Dijkstra's algorithm, conceived by computer scientist Edsger Dijkstra, is a grap
 ```
 g++ -std=c++11 src/pathfinder.cpp 
 ```
+
+## Folder Structure
+    ├── data                    # Data of friend connectivity graph
+    ├── Reference Solution      # Documentation of correct output files
+    ├── Output                  # Sample output to standard out
+    ├── Makefile
+    └── README.md
