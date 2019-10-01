@@ -5,4 +5,8 @@ Dijkstra's algorithm, conceived by computer scientist Edsger Dijkstra, is a grap
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif">
 </p>
+
 ## How to run
+```
+g++ -std=c++11 src/pathfinder.cpp 
+```
